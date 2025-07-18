@@ -4,13 +4,25 @@ import { AUTHOR_BY_GITHUB_ID_QUERY } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { writeClient } from "@/sanity/lib/write-client";
 
+interface GitHubProfile {
+  id: string;
+  login: string;
+  bio?: string;
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [GitHub],
   callbacks: {
     async signIn({
       user: { name, email, image },
-      profile: { id, login, bio },
+      profile,
     }) {
+      if (!profile) return false;
+      
+      // Safe type assertion through unknown
+      const githubProfile = profile as unknown as GitHubProfile;
+      const { id, login, bio } = githubProfile;
+      
       const existingUser = await client
         .withConfig({ useCdn: false })
         .fetch(AUTHOR_BY_GITHUB_ID_QUERY, {
