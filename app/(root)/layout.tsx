@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Toaster } from "@/components/ui/toaster";
 import Navbar from "../../components/Navbar";
 
@@ -7,6 +8,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
             <Navbar/>
             {children}
             <Toaster />
+            <Analytics />
         </main>
     )
 }
