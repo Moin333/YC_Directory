@@ -2,12 +2,6 @@
 
 A modern web application that allows users to **search, browse, and explore** a curated list of startup companies, inspired by the Y Combinator model. Designed with performance and user experience in mind, **YC Directory** helps users discover innovative startups with ease.
 
-![GitHub Repo stars](https://img.shields.io/github/stars/Moin333/YC_Directory?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Moin333/YC_Directory?style=social)
-![GitHub license](https://img.shields.io/github/license/Moin333/YC_Directory)
-![GitHub issues](https://img.shields.io/github/issues/Moin333/YC_Directory)
-![Vercel](https://img.shields.io/badge/deployed%20on-Vercel-black?logo=vercel)
-
 ---
 
 ## 📌 Table of Contents
